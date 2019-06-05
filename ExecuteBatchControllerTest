@@ -1,0 +1,19 @@
+@isTest(seeallData=true)
+public class ExecuteBatchControllerTest {
+   
+    static testMethod void testMethodBatch(){
+   
+    ExecuteBatchController ebc = new ExecuteBatchController ();
+    
+    //SFToEASubscriptionsBatch bt=new SFToEASubscriptionsBatch();
+    
+    Test.startTest();
+    PageReference pageRef = Page.ExecuteBatchPage;
+    Test.setCurrentPageReference(pageRef);
+    ebc.executeBatch();
+    //Database.executeBatch(bt ,1);
+    PageReference   objPageRef =  ebc.validateAndRedirect();
+    
+    Test.stopTest();
+  }
+}
