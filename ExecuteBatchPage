@@ -1,0 +1,39 @@
+<apex:page controller="ExecuteBatchController"  showHeader="true" standardStylesheets="true" sidebar="true">
+    <apex:form >
+        <apex:pageMessages id="pageMsg"/> 
+        <style type="text/css">
+            p { font-weight: bold;
+            text-align: left;
+             } 
+        </style>
+        <apex:slds /> 
+        <article class="slds-card">
+            <div class="slds-grid slds-einstein-header slds-card__header">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+            <div class="slds-media__body">
+            <h2 class="slds-truncate" title="Quick Execution">
+            <a>
+            <span class="slds-text-heading_small">Quick Execution</span>
+            </a>
+            </h2>
+            </div>
+            </div>
+            <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
+            </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">Execution of Batch class</div>
+            <footer class="slds-card__footer">
+            <p> Execute Batch : Button used to execute Batch manually</p>
+            <apex:commandButton style="float: left;" value="Execute Batch" action="{!executeBatch}"/> <br>
+            </br>
+            <p>View Apex Job : Button used to track batch</p>
+            <apex:commandButton style="float: left;" value="View Apex Job" action="{!validateAndRedirect}"/>   
+               <br/>
+            </footer>
+
+       </article>
+              
+  </apex:form>
+            
+</apex:page>
