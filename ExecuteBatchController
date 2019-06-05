@@ -1,0 +1,21 @@
+public class ExecuteBatchController{
+
+        public ExecuteBatchController(){}
+    
+            public void executeBatch(){
+        
+                SFToEASubscriptionsBatch BatchJob = new SFToEASubscriptionsBatch();
+                Database.executeBatch(BatchJob,1);
+                
+                ApexPages.addMessage(new ApexPages.Message(ApexPages.severity.Confirm, 'Execution Completed'));
+           } 
+
+        public PageReference validateAndRedirect(){
+    
+              //Write your logic here and redirect
+              PageReference retURL = new PageReference('/apexpages/setup/listAsyncApexJobs.apexp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DJobs&setupid=AsyncApexJobs');
+              retURL.setRedirect(true);
+              return retURL;
+        
+            }     
+}
